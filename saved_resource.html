@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thiết Kế Nội Thất 2KIM – Mỗi Không Gian Là Một Tác Phẩm Nghệ Thuật</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans', Noto Sans;
+  color: #222;
+  background: #fff;
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ===== CSS VARS ===== */
+:root {
+  --gold: #F5A623;
+  --gold2: #D4881C;
+  --red: #C0392B;
+  --navy: #1A2B4A;
+  --navy2: #243656;
+  --white: #fff;
+  --light: #f7f7f7;
+  --gray: #666;
+  --border: #e0e0e0;
+}
+
+/* ===== HEADING FONT ===== */
+h1, h2, h3, h4, h5,
+.logo-main, .sec-title, .hero h1,
+.contact-info h2, .banner-section h2,
+.form-heading, .footer-logo {
+  font-family: 'Noto Sans', Noto Sans;
+  letter-spacing: 0.02em;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+  background: var(--navy);
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  padding: 7px 0;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+.topbar a { color: var(--gold); font-weight: bold; }
+
+/* ===== HEADER / NAV ===== */
+.header {
+  background: #fff;
+  border-bottom: 3px solid var(--gold);
+  position: sticky; top: 0; z-index: 999;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; height: 70px;
+}
+.logo-area { display: flex; flex-direction: column; line-height: 1.2; }
+.logo-main {
+  font-size: 22px; font-weight: 900; color: var(--navy);
+  letter-spacing: 0.5px;
+}
+.logo-main span { color: var(--gold); }
+.logo-sub { font-size: 10px; color: var(--gray); letter-spacing: 2px; text-transform: uppercase; }
+nav { display: flex; gap: 0; align-items: center; }
+nav a {
+  padding: 0 16px; height: 70px; display: flex; align-items: center;
+  font-size: 14px; font-weight: 600; color: var(--navy);
+  border-bottom: 3px solid transparent; margin-bottom: -3px;
+  transition: all 0.2s; white-space: nowrap;
+}
+nav a:hover, nav a.active { color: var(--gold); border-bottom-color: var(--gold); }
+.header-cta {
+  background: var(--gold); color: var(--navy) !important;
+  padding: 10px 22px !important; border-radius: 3px; font-weight: 700 !important;
+  height: auto !important; border-bottom: none !important; margin-bottom: 0 !important;
+}
+.header-cta:hover { background: var(--gold2) !important; color: #fff !important; }
+.header-phone { font-size: 18px; font-weight: 900; color: var(--navy); margin-right: 14px; }
+.header-phone span { color: var(--red); }
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(120deg, var(--navy) 0%, #162240 55%, #0d1829 100%);
+  min-height: 88vh; display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.hero-bg-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(245,166,35,0.04) 0px, rgba(245,166,35,0.04) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(-45deg, rgba(245,166,35,0.04) 0px, rgba(245,166,35,0.04) 1px, transparent 1px, transparent 60px);
+}
+.hero-gold-shape {
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 48%; background: linear-gradient(135deg, rgba(245,166,35,0.13) 0%, rgba(212,136,28,0.07) 100%);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; padding: 60px 20px;
+  display: grid; grid-template-columns: 1fr 420px; gap: 60px;
+  align-items: center; position: relative; z-index: 2; width: 100%;
+}
+.hero-label {
+  display: inline-block;
+  background: rgba(245,166,35,0.18); border: 1px solid rgba(245,166,35,0.45);
+  color: var(--gold); font-size: 11px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 5px 15px; border-radius: 2px; margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  color: #fff; font-weight: 900; line-height: 1.18;
+  margin-bottom: 10px; font-family: 'Noto Sans', sans-serif;
+}
+.hero h1 .gold { color: var(--gold); }
+.hero-slogan {
+  font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.6);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;
+}
+.hero-slogan span { color: var(--gold); }
+.hero-desc {
+  color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.8;
+  margin-bottom: 32px; max-width: 520px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+.btn-gold {
+  background: var(--gold); color: var(--navy);
+  padding: 14px 30px; font-weight: 800; font-size: 14px;
+  border-radius: 3px; transition: all 0.25s;
+  box-shadow: 0 6px 24px rgba(245,166,35,0.38);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-gold:hover { background: var(--gold2); transform: translateY(-2px); }
+.btn-outline {
+  border: 2px solid rgba(255,255,255,0.35); color: #fff;
+  padding: 13px 26px; font-weight: 600; font-size: 14px;
+  border-radius: 3px; transition: all 0.25s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.hero-stats { display: flex; gap: 40px; }
+.stat { }
+.stat-num { font-size: 2.4rem; font-weight: 900; color: var(--gold); line-height: 1; }
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px; }
+
+/* HERO FORM */
+.hero-form-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 6px; padding: 34px 30px;
+}
+.form-heading {
+  font-size: 17px; font-weight: 800; color: #fff;
+  margin-bottom: 4px; text-align: center;
+}
+.form-subheading {
+  font-size: 12px; color: var(--gold); text-align: center;
+  margin-bottom: 22px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+}
+.form-row { margin-bottom: 12px; }
+.form-row label { display: block; font-size: 11px; color: rgba(255,255,255,0.55); font-weight: 700; letter-spacing: 0.8px; margin-bottom: 5px; text-transform: uppercase; }
+.form-row input, .form-row select, .form-row textarea {
+  width: 100%; padding: 11px 14px; border-radius: 3px;
+  border: 1.5px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.08); color: #fff;
+  font-size: 14px; font-family: 'Noto Sans', sans-serif; outline: none;
+  transition: border-color 0.2s;
+}
+.form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,0.3); }
+.form-row input:focus, .form-row select:focus { border-color: var(--gold); }
+.form-row select option { background: var(--navy); color: #fff; }
+.form-row textarea { resize: none; height: 72px; }
+.form-submit-btn {
+  width: 100%; padding: 14px; background: var(--gold); color: var(--navy);
+  font-weight: 900; font-size: 15px; border: none; border-radius: 3px;
+  cursor: pointer; font-family: 'Noto Sans', sans-serif;
+  transition: all 0.25s; margin-top: 4px;
+  box-shadow: 0 6px 20px rgba(245,166,35,0.38);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.form-submit-btn:hover { background: var(--gold2); transform: translateY(-1px); }
+.form-privacy { text-align: center; font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 9px; }
+
+/* ===== SECTION COMMONS ===== */
+.section { padding: 72px 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.sec-tag { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.sec-title { font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 900; color: var(--navy); line-height: 1.22; margin-bottom: 14px;  }
+.sec-desc { color: var(--gray); font-size: 15px; line-height: 1.75; }
+.sec-header { margin-bottom: 46px; }
+.sec-header.center { text-align: center; }
+.sec-header.center .sec-desc { max-width: 640px; margin: 0 auto; }
+.divider { width: 50px; height: 3px; background: var(--gold); margin: 14px 0 18px; border-radius: 2px; }
+.divider.center { margin: 14px auto 18px; }
+
+/* ===== INTRO / ABOUT ===== */
+.intro-section { background: var(--light); }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.intro-img-stack { position: relative; }
+.intro-img-main {
+  width: 100%; aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  font-size: 64px; color: rgba(245,166,35,0.3);
+}
+.intro-img-accent {
+  position: absolute; bottom: -20px; right: -20px;
+  width: 55%; aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 100%);
+  border-radius: 4px; border: 5px solid #fff;
+  display: flex; align-items: center; justify-content: center; font-size: 28px;
+}
+.intro-stats { display: flex; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+.intro-stat { text-align: center; }
+.intro-stat-num { font-size: 2.6rem; font-weight: 900; color: var(--navy); line-height: 1; }
+.intro-stat-num span { color: var(--gold); }
+.intro-stat-label { font-size: 12px; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+.intro-text p { color: #444; font-size: 15px; line-height: 1.8; margin-bottom: 16px; }
+.intro-text strong { color: var(--navy); }
+
+/* ===== SERVICES ===== */
+.services-section { background: #fff; }
+.services-tabs { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 36px; overflow-x: auto; }
+.tab-btn {
+  padding: 12px 22px; font-size: 14px; font-weight: 700; color: var(--gray);
+  border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer;
+  background: none; border-left: none; border-right: none; border-top: none;
+  font-family: 'Noto Sans', sans-serif; white-space: nowrap; transition: all 0.2s;
+}
+.tab-btn.active, .tab-btn:hover { color: var(--navy); border-bottom-color: var(--gold); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card {
+  border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+  transition: all 0.3s; cursor: pointer;
+}
+.service-card:hover { box-shadow: 0 12px 36px rgba(26,43,74,0.13); transform: translateY(-4px); border-color: var(--gold); }
+.scard-img {
+  width: 100%; aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center; font-size: 52px;
+  position: relative; overflow: hidden;
+}
+.scard-img .scard-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,43,74,0.75) 0%, transparent 55%);
+  display: flex; align-items: flex-end; padding: 16px;
+  opacity: 0; transition: opacity 0.3s;
+}
+.service-card:hover .scard-overlay { opacity: 1; }
+.scard-overlay span { color: #fff; font-size: 13px; font-weight: 700; }
+.scard-body { padding: 18px 20px; }
+.scard-cat { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+.scard-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+.scard-desc { font-size: 13px; color: var(--gray); line-height: 1.6; }
+.sc-bg1 { background: linear-gradient(135deg, #1e3a6e, #2c5399); }
+.sc-bg2 { background: linear-gradient(135deg, #4a1e0a, #7a3515); }
+.sc-bg3 { background: linear-gradient(135deg, #0a3d1e, #156b35); }
+.sc-bg4 { background: linear-gradient(135deg, #2a0a4a, #4a1575); }
+.sc-bg5 { background: linear-gradient(135deg, #1a1a2e, #2d2d5a); }
+.sc-bg6 { background: linear-gradient(135deg, #2e1a0a, #5a3515); }
+.view-more-wrap { text-align: center; margin-top: 36px; }
+.btn-view-more {
+  display: inline-block; padding: 12px 32px; border: 2px solid var(--navy);
+  color: var(--navy); font-weight: 700; font-size: 14px; border-radius: 3px;
+  transition: all 0.25s;
+}
+.btn-view-more:hover { background: var(--navy); color: #fff; }
+
+/* ===== PROCESS ===== */
+.process-section { background: var(--navy); }
+.process-section .sec-title { color: #fff; }
+.process-section .sec-desc { color: rgba(255,255,255,0.55); }
+.process-section .sec-tag { color: var(--gold); }
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 48px; position: relative; }
+.process-steps::before {
+  content: ''; position: absolute; top: 30px; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245,166,35,0.5), transparent);
+}
+.pstep { text-align: center; padding: 0 8px; }
+.pstep-num {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--gold); color: var(--navy); font-weight: 900; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+  box-shadow: 0 0 0 8px rgba(245,166,35,0.14);
+}
+.pstep h5 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.pstep p { color: rgba(255,255,255,0.45); font-size: 12px; line-height: 1.6; }
+
+/* ===== PORTFOLIO ===== */
+.portfolio-section { background: var(--light); }
+.port-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.port-tab {
+  padding: 8px 18px; border-radius: 3px; border: 2px solid var(--border);
+  font-size: 13px; font-weight: 700; color: var(--gray); cursor: pointer;
+  background: #fff; font-family: 'Noto Sans', sans-serif; transition: all 0.2s;
+}
+.port-tab.active, .port-tab:hover { border-color: var(--gold); color: var(--gold); background: rgba(245,166,35,0.06); }
+.port-grid {
+  display: grid; gap: 14px;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 220px 220px;
+}
+.port-item {
+  border-radius: 4px; overflow: hidden; position: relative; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 44px;
+}
+.port-item:first-child { grid-row: 1 / 3; }
+.port-item .port-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,43,74,0.88) 0%, rgba(26,43,74,0.1) 60%);
+  opacity: 0; transition: opacity 0.3s;
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+}
+.port-item:hover .port-overlay { opacity: 1; }
+.port-overlay .port-cat { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+.port-overlay .port-name { font-size: 14px; font-weight: 700; color: #fff; }
+.pb1 { background: linear-gradient(135deg, #1e3360, #2c4d90); }
+.pb2 { background: linear-gradient(135deg, #3d1a0a, #6b3010); }
+.pb3 { background: linear-gradient(135deg, #0a3020, #156040); }
+.pb4 { background: linear-gradient(135deg, #2a1040, #4a1868); }
+.pb5 { background: linear-gradient(135deg, #1a2030, #2a3050); }
+
+/* ===== WHY CHOOSE ===== */
+.why-section { background: #fff; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.why-card {
+  padding: 30px 26px; border: 1px solid var(--border); border-radius: 4px;
+  border-top: 4px solid transparent; transition: all 0.3s; position: relative;
+}
+.why-card:hover { border-top-color: var(--gold); box-shadow: 0 12px 36px rgba(26,43,74,0.1); }
+.why-icon { font-size: 36px; margin-bottom: 16px; }
+.why-card h4 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.why-card p { font-size: 13.5px; color: var(--gray); line-height: 1.7; }
+
+/* ===== FREE DESIGN BANNER ===== */
+.banner-section {
+  background: linear-gradient(100deg, var(--navy) 0%, #162240 100%);
+  padding: 56px 20px; text-align: center; position: relative; overflow: hidden;
+}
+.banner-section::before {
+  content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+  background: linear-gradient(135deg, rgba(245,166,35,0.1), transparent);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.banner-section h2 { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 8px; position: relative; z-index: 1; }
+.banner-section h2 span { color: var(--gold); }
+.banner-section p { color: rgba(255,255,255,0.65); font-size: 15px; margin-bottom: 30px; position: relative; z-index: 1; }
+.banner-offer { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; position: relative; z-index: 1; }
+.offer-chip {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(245,166,35,0.3);
+  color: #fff; padding: 10px 20px; border-radius: 3px; font-size: 13px; font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+}
+.offer-chip .check { color: var(--gold); font-size: 16px; }
+.banner-note { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 14px; position: relative; z-index:1; }
+
+/* ===== TESTIMONIALS ===== */
+.reviews-section { background: var(--light); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.review-card {
+  background: #fff; border-radius: 4px; padding: 26px;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 2px 16px rgba(26,43,74,0.06);
+  position: relative;
+}
+.review-card::after {
+  content: '"'; position: absolute; top: 12px; right: 18px;
+  font-size: 60px; color: rgba(245,166,35,0.15); font-family: Georgia; line-height: 1;
+}
+.stars { color: var(--gold); font-size: 13px; margin-bottom: 10px; }
+.review-text { font-size: 13.5px; color: #444; line-height: 1.75; margin-bottom: 18px; font-style: italic; }
+.reviewer { display: flex; align-items: center; gap: 12px; }
+.reviewer-av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold2)); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--navy); font-size: 15px; flex-shrink: 0; }
+.reviewer-name { font-weight: 700; font-size: 14px; color: var(--navy); }
+.reviewer-project { font-size: 12px; color: var(--gray); }
+
+/* ===== CONTACT / BOTTOM FORM ===== */
+.contact-section { background: #fff; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.contact-info h2 { font-size: 2rem; font-weight: 900; color: var(--navy); margin-bottom: 16px; line-height: 1.2; }
+.contact-info h2 span { color: var(--gold); }
+.contact-info p { color: var(--gray); font-size: 15px; line-height: 1.75; margin-bottom: 28px; }
+.contact-items { display: flex; flex-direction: column; gap: 18px; }
+.citem { display: flex; align-items: flex-start; gap: 14px; }
+.citem-icon {
+  width: 44px; height: 44px; border-radius: 4px; background: var(--navy);
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+  flex-shrink: 0;
+}
+.citem-text strong { display: block; font-size: 15px; color: var(--navy); font-weight: 800; }
+.citem-text span { font-size: 13px; color: var(--gray); }
+.contact-form-box {
+  background: var(--light); border-radius: 6px; padding: 36px 32px;
+  border-top: 4px solid var(--gold);
+}
+.contact-form-box h4 { font-size: 18px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
+.contact-form-box .form-sub { font-size: 13px; color: var(--gray); margin-bottom: 24px; }
+.lform-row { margin-bottom: 14px; }
+.lform-row label { display: block; font-size: 12px; font-weight: 700; color: #555; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+.lform-row input, .lform-row select, .lform-row textarea {
+  width: 100%; padding: 12px 14px; border: 1.5px solid #ddd; border-radius: 3px;
+  font-size: 14px; font-family: 'Noto Sans', sans-serif; color: var(--navy);
+  outline: none; transition: border-color 0.2s; background: #fff;
+}
+.lform-row input:focus, .lform-row select:focus, .lform-row textarea:focus { border-color: var(--gold); }
+.lform-row input::placeholder, .lform-row textarea::placeholder { color: #aaa; }
+.lform-row textarea { resize: none; height: 80px; }
+.lform-submit {
+  width: 100%; padding: 14px; background: var(--navy); color: #fff;
+  font-size: 15px; font-weight: 800; border: none; border-radius: 3px;
+  cursor: pointer; font-family: 'Noto Sans', sans-serif; text-transform: uppercase;
+  transition: all 0.25s; letter-spacing: 0.5px; margin-top: 4px;
+}
+.lform-submit:hover { background: var(--gold); color: var(--navy); }
+.lform-note { font-size: 11px; color: #aaa; text-align: center; margin-top: 10px; }
+
+/* ===== FOOTER ===== */
+footer { background: #0d1829; color: rgba(255,255,255,0.5); padding: 48px 20px 28px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+.footer-brand { }
+.footer-logo { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 6px; }
+.footer-logo span { color: var(--gold); }
+.footer-slogan { font-size: 11px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 700; }
+.footer-desc { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.45); }
+.footer-col h5 { font-size: 13px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.footer-bottom p { font-size: 12px; }
+.footer-bottom .footer-brand-accent { color: var(--gold); font-weight: 700; }
+
+/* ===== FLOATING BTNS ===== */
+.float-group { position: fixed; bottom: 24px; right: 20px; z-index: 998; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.fbtn {
+  display: flex; align-items: center; gap: 9px; padding: 11px 18px;
+  border-radius: 50px; font-weight: 800; font-size: 13.5px; text-decoration: none;
+  white-space: nowrap; transition: all 0.25s; box-shadow: 0 6px 22px rgba(0,0,0,0.22);
+}
+.fbtn-zalo { background: #0068FF; color: #fff; }
+.fbtn-call { background: var(--gold); color: var(--navy); }
+.fbtn:hover { transform: translateX(-4px) scale(1.04); box-shadow: 0 10px 32px rgba(0,0,0,0.3); }
+
+/* ===== PULSE ANIMATION ===== */
+.pulse { animation: pulse 2.2s infinite; }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 6px 22px rgba(0,0,0,0.22), 0 0 0 0 rgba(0,104,255,0.4); }
+  50% { box-shadow: 0 6px 22px rgba(0,0,0,0.22), 0 0 0 8px rgba(0,104,255,0); }
+}
+
+/* ===== SCROLL FADE IN ===== */
+.fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-form-box { display: none; }
+  .intro-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .process-steps::before { display: none; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .port-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .port-item:first-child { grid-row: auto; }
+  nav { display: none; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .port-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 22px; }
+  .intro-stats { gap: 20px; }
+  .banner-offer { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  📞 Hotline & Zalo tư vấn: <a href="tel:0974236798">0974 236 798</a> &nbsp;|&nbsp; Khảo sát tận nơi &nbsp;|&nbsp; <a href="#lien-he">Nhận tư vấn miễn phí ngay →</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-main">THIẾT KẾ NỘI THẤT <span>2KIM</span></div>
+      <div class="logo-sub">TIN CẬY – TẬN TÂM – NÂNG TẦM</div>
+    </div>
+    <nav>
+      <a href="#gioi-thieu">Giới Thiệu</a>
+      <a href="#dich-vu">Dịch Vụ</a>
+      <a href="#du-an">Dự Án</a>
+      <a href="#tai-sao">Ưu Điểm</a>
+      <a href="#lien-he">Liên Hệ</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div class="header-phone">📞 <span>0974 236 798</span></div>
+      <a href="#lien-he" class="header-cta">TƯ VẤN MIỄN PHÍ</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-gold-shape"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-label">✦ Thiết Kế Nội Thất Chuyên Nghiệp</div>
+      <h1>
+        Mỗi Không Gian<br>
+        Là Một <span class="gold">Tác Phẩm</span><br>
+        Nghệ Thuật
+      </h1>
+      <div class="hero-slogan"><span>TIN CẬY</span> – <span>TẬN TÂM</span> – <span>NÂNG TẦM</span></div>
+      <p class="hero-desc">
+        <strong style="color:#fff;">Thiết Kế Nội Thất 2KIM</strong> — đơn vị thiết kế nội thất uy tín hàng đầu.
+        Đội ngũ kiến trúc sư giàu kinh nghiệm, mang đến giải pháp không gian sống được cá nhân hóa hoàn toàn — từ căn hộ, nhà phố đến biệt thự cao cấp.
+      </p>
+      <div class="hero-btns">
+        <a href="#lien-he" class="btn-gold">🎁 Nhận Tư Vấn Miễn Phí</a>
+        <a href="#du-an" class="btn-outline">Xem Dự Án →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">100<span style="font-size:1.5rem;color:var(--gold)">+</span></div>
+          <div class="stat-label">Công Trình</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5<span style="font-size:1.5rem;color:var(--gold)">+</span></div>
+          <div class="stat-label">Năm Kinh Nghiệm</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">98<span style="font-size:1.5rem;color:var(--gold)">%</span></div>
+          <div class="stat-label">Khách Hài Lòng</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO FORM -->
+    <div class="hero-form-box">
+      <div class="form-heading">MIỄN PHÍ TƯ VẤN THIẾT KẾ</div>
+      <div class="form-subheading">⚡ Chuyên gia gọi lại trong 15 phút</div>
+      <div class="form-row">
+        <label>Họ và tên</label>
+        <input type="text" placeholder="Nguyễn Văn A">
+      </div>
+      <div class="form-row">
+        <label>Số điện thoại *</label>
+        <input type="tel" placeholder="0999 999 999">
+      </div>
+      <div class="form-row">
+        <label>Tỉnh / Thành phố</label>
+        <select>
+          <option value="">-- Chọn khu vực --</option>
+          <option>Hà Nội</option>
+          <option>Thanh Hóa</option>
+          <option>Nghệ An</option>
+          <option>Hải Phòng</option>
+          <option>Hải Dương</option>
+          <option>Bắc Ninh</option>
+          <option>Bắc Giang</option>
+          <option>Hưng Yên</option>
+          <option>Nam Định</option>
+          <option>Thái Bình</option>
+          <option>Ninh Bình</option>
+          <option>Hà Nam</option>
+          <option>Quảng Ninh</option>
+          <option>Phú Thọ</option>
+          <option>Vĩnh Phúc</option>
+          <option>Thái Nguyên</option>
+          <option>Lạng Sơn</option>
+          <option>Tuyên Quang</option>
+          <option>Yên Bái</option>
+          <option>Hòa Bình</option>
+          <option>Sơn La</option>
+          <option>Điện Biên</option>
+          <option>Lai Châu</option>
+          <option>Lào Cai</option>
+          <option>Hà Giang</option>
+          <option>Cao Bằng</option>
+          <option>Bắc Kạn</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Loại không gian</label>
+        <select>
+          <option>-- Chọn loại không gian --</option>
+          <option>Căn hộ chung cư</option>
+          <option>Nhà phố / liền kề</option>
+          <option>Biệt thự</option>
+          <option>Văn phòng / showroom</option>
+          <option>Nhà hàng / cafe</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Ghi chú thêm</label>
+        <textarea placeholder="Diện tích, phong cách yêu thích, ngân sách..."></textarea>
+      </div>
+      <button class="form-submit-btn" onclick="alert('Cảm ơn bạn! Chuyên gia 2KIM sẽ liên hệ với bạn trong vòng 15 phút.')">
+        GỬI YÊU CẦU TƯ VẤN
+      </button>
+      <p class="form-privacy">🔒 Thông tin của bạn được bảo mật tuyệt đối</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO / ABOUT -->
+<section class="intro-section section" id="gioi-thieu">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-img-stack">
+        <div class="intro-img-main"> <div class="intro-img-main"><img src="C:\Users\Admin\Downloads\Real-time HTML Editor_files\Thiết kế chưa có tên (90).png" style="width:100%;height:100%;object-fit:cover;"></div></div>
+        <div class="intro-img-accent"> <div class="intro-img-main"><img src="C:\Users\Admin\Downloads\Real-time HTML Editor_files\Thiết kế chưa có tên (90).png" style="width:100%;height:100%;object-fit:cover;"></div></div>
+      </div>
+      <div class="intro-text">
+        <div class="sec-tag">Về Chúng Tôi</div>
+        <h2 class="sec-title">THIẾT KẾ NỘI THẤT <span style="color:var(--gold)">2KIM</span> — Công Ty Thiết Kế Nội Thất Uy Tín</h2>
+        <div class="divider"></div>
+        <p>Với hơn <strong>5 năm kinh nghiệm</strong> trong lĩnh vực thiết kế nội thất, <strong>Thiết Kế Nội Thất 2KIM</strong> đã trở thành đơn vị được tin tưởng bởi hàng trăm gia đình.</p>
+        <p>Đội ngũ kiến trúc sư và nhà thiết kế của 2KIM không chỉ tạo ra những không gian đẹp — chúng tôi tạo ra những tác phẩm nghệ thuật phản ánh cá tính và lối sống của từng gia chủ.</p>
+        <p>2KIM cung cấp dịch vụ <strong>thiết kế nội thất trọn gói</strong> từ ý tưởng, bản vẽ 3D đến thi công hoàn thiện. <strong>Khảo sát tận nơi.</strong></p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <div class="intro-stat-num">100<span>+</span></div>
+            <div class="intro-stat-label">Công Trình</div>
+          </div>
+          <div class="intro-stat">
+            <div class="intro-stat-num">5<span>+</span></div>
+            <div class="intro-stat-label">Năm Hoạt Động</div>
+          </div>
+          <div class="intro-stat">
+            <div class="intro-stat-num">98<span>%</span></div>
+            <div class="intro-stat-label">Khách Hài Lòng</div>
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="#lien-he" class="btn-gold">Nhận Tư Vấn Miễn Phí</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="process-section section">
+  <div class="container">
+    <div class="sec-header center">
+      <div class="sec-tag">Quy Trình Làm Việc</div>
+      <h2 class="sec-title">5 Bước Đến Ngôi Nhà Mơ Ước</h2>
+      <div class="divider center"></div>
+      <p class="sec-desc">Quy trình làm việc chuyên nghiệp, minh bạch — 2KIM đồng hành cùng bạn từng bước.</p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep fade-in">
+        <div class="pstep-num">1</div>
+        <h5>Tư Vấn Miễn Phí</h5>
+        <p>Lắng nghe nhu cầu, phong cách và ngân sách của bạn</p>
+      </div>
+      <div class="pstep fade-in">
+        <div class="pstep-num">2</div>
+        <h5>Khảo Sát Tận Nơi</h5>
+        <p>Đo đạc, phân tích không gian — khảo sát tận nơi</p>
+      </div>
+      <div class="pstep fade-in">
+        <div class="pstep-num">3</div>
+        <h5>Thiết Kế 3D</h5>
+        <p>Bản vẽ kỹ thuật và hình ảnh 3D chân thực, dễ hình dung</p>
+      </div>
+      <div class="pstep fade-in">
+        <div class="pstep-num">4</div>
+        <h5>Thi Công & Giám Sát</h5>
+        <p>Triển khai theo đúng bản vẽ, giám sát chặt chẽ từng hạng mục</p>
+      </div>
+      <div class="pstep fade-in">
+        <div class="pstep-num">5</div>
+        <h5>Bàn Giao & Bảo Hành</h5>
+        <p>Nghiệm thu hoàn thiện, bảo hành dài hạn, hỗ trợ sau bàn giao</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-section section" id="du-an">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-tag">Công Trình Tiêu Biểu</div>
+      <h2 class="sec-title">THIẾT KẾ NỘI THẤT 2KIM — Dự Án Thực Tế</h2>
+      <div class="divider"></div>
+      <p class="sec-desc">Mỗi công trình là một câu chuyện — về phong cách, cá tính và lối sống của từng gia chủ.</p>
+    </div>
+    <div class="port-tabs">
+      <button class="port-tab active">Tất Cả</button>
+      <button class="port-tab">Thiết Kế Chung Cư</button>
+      <button class="port-tab">Thiết Kế Nhà Phố</button>
+      <button class="port-tab">Thiết Kế Biệt Thự</button>
+    </div>
+    <div class="port-grid">
+      <div class="port-item pb1">
+         <div class="intro-img-main"><img src="C:\Users\Admin\Downloads\Real-time HTML Editor_files\Thiết kế chưa có tên (9).png" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="port-overlay">
+          <div class="port-cat">Thiết Kế Nội Thất</div>
+          <div class="port-name">Chung Cư Phong Cách Hiện Đại – Anh Minh – Hà Nội</div>
+        </div>
+      </div>
+      <div class="port-item pb2">
+         <div class="intro-img-main"><img src="C:\Users\Admin\Downloads\Real-time HTML Editor_files\Thiết kế chưa có tên (81).png" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="port-overlay">
+          <div class="port-cat">Thiết Kế Nội Thất</div>
+          <div class="port-name">Nhà Phố Tân Cổ Điển – Chị Lan – Bắc Ninh</div>
+        </div>
+      </div>
+      <div class="port-item pb4">
+         <div class="intro-img-main"><img src="C:\Users\Admin\Downloads\Real-time HTML Editor_files\Thiết kế chưa có tên (56).png" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="port-overlay">
+          <div class="port-cat">Thiết Kế Nội Thất</div>
+          <div class="port-name">Biệt Thự Luxury – Anh Hùng – Thanh Hóa</div>
+        </div>
+    </div>
+    <div class="view-more-wrap" style="margin-top:28px;">
+      <a href="https://www.facebook.com/thietkenoithat2kim" target="_blank" class="btn-view-more">Xem Tất Cả Dự Án →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why-section section" id="tai-sao">
+  <div class="container">
+    <div class="sec-header center">
+      <div class="sec-tag">Tại Sao Chọn 2KIM</div>
+      <h2 class="sec-title">THIẾT KẾ NỘI THẤT 2KIM — Điểm Khác Biệt</h2>
+      <div class="divider center"></div>
+      <p class="sec-desc">Không chỉ là thiết kế đẹp — 2KIM mang đến trải nghiệm dịch vụ tận tâm và chuyên nghiệp từ đầu đến cuối.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <div class="why-icon">🏆</div>
+        <h4>Đội Ngũ Chuyên Nghiệp 5+ Năm</h4>
+        <p>Kiến trúc sư và nhà thiết kế giàu kinh nghiệm, am hiểu xu hướng thiết kế nội thất trong và ngoài nước.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">✏️</div>
+        <h4>Thiết Kế Cá Nhân Hóa 100%</h4>
+        <p>Không dùng mẫu có sẵn. Mỗi dự án được thiết kế riêng biệt theo phong cách và nhu cầu của từng gia chủ.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">📐</div>
+        <h4>Bản Vẽ 3D Chân Thực</h4>
+        <p>Trình bày thiết kế qua hình ảnh 3D chi tiết — bạn thấy được kết quả trước khi thi công.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">⏰</div>
+        <h4>Đúng Tiến Độ Cam Kết</h4>
+        <p>Hợp đồng rõ ràng, tiến độ được giám sát chặt chẽ. Cam kết bàn giao đúng thời hạn.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">💰</div>
+        <h4>Báo Giá Minh Bạch</h4>
+        <p>Chi phí rõ ràng từng hạng mục, không phát sinh ẩn. Bạn kiểm soát hoàn toàn ngân sách dự án.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">📍</div>
+        <h4>Khảo Sát Tận Nơi Trên Toàn Quốc</h4>
+        <p>Khảo sát và tư vấn trực tiếp tại nhà bạn. Không mất phí đi lại.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE DESIGN BANNER -->
+<section class="banner-section">
+  <div class="container" style="position:relative;z-index:2;">
+    <h2>MIỄN PHÍ TƯ VẤN THIẾT KẾ <span>100%</span></h2>
+    <p>Đăng ký ngay hôm nay để nhận tư vấn thiết kế miễn phí từ đội ngũ chuyên gia 2KIM.</p>
+    <div class="banner-offer">
+      <div class="offer-chip"><span class="check">✔</span> Tư vấn thiết kế miễn phí</div>
+      <div class="offer-chip"><span class="check">✔</span> Bản vẽ 3D tặng kèm</div>
+      <div class="offer-chip"><span class="check">✔</span> Khảo sát tận nơi không phí</div>
+      <div class="offer-chip"><span class="check">✔</span> Bảo hành lên đến 5 năm</div>
+    </div>
+    <a href="#lien-he" class="btn-gold" style="font-size:15px;padding:16px 40px;">🚀 ĐĂNG KÝ NGAY — NHẬN TƯ VẤN MIỄN PHÍ</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="reviews-section section">
+  <div class="container">
+    <div class="sec-header center">
+      <div class="sec-tag">Khách Hàng Nói Gì</div>
+      <h2 class="sec-title">100+ Gia Đình Đã Tin Tưởng THIẾT KẾ NỘI THẤT 2KIM</h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Mình nhận nhà cuối năm ngoái, thiết kế đúng ý mình, đội ngũ lắng nghe và tư vấn nhiệt tình. Tiến độ đúng hẹn, chi phí rõ ràng, sẽ recomend cho mọi người xung quanh nha."</p>
+        <div class="reviewer">
+          <div class="reviewer-av">A</div>
+          <div>
+            <div class="reviewer-name">Chị Anh Thư</div>
+            <div class="reviewer-project">Căn hộ 85m² – Vinhomes Smart City, Hà Nội</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Nhà mình là căn nhà phố bình thường thôi, 2KIM thiết kế và thi công trọn gói giờ trông sáng sủa đẹp lắm. Vật liệu tốt, thợ tay nghề cao. Team ở HN, mình ở Bắc Ninh mà vẫn đi lại nhiệt tình, 10 điểm."</p>
+        <div class="reviewer">
+          <div class="reviewer-av">M</div>
+          <div>
+            <div class="reviewer-name">Anh Minh Khoa</div>
+            <div class="reviewer-project">Nhà phố 5 tầng – Bắc Ninh</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Điều tôi thích nhất là sự tận tâm của team 2KIM. Từ tư vấn đến thi công đều rất chỉn chu. Đội ngũ tư vấn có gu, nhà mình thiết kế xong ai cũng khen."</p>
+        <div class="reviewer">
+          <div class="reviewer-av">H</div>
+          <div>
+            <div class="reviewer-name">Chị Hà Linh</div>
+            <div class="reviewer-project">Biệt thự – Thanh Hóa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / BOTTOM FORM -->
+<section class="contact-section section" id="lien-he">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="sec-tag">Liên Hệ</div>
+        <h2>Ngôi Nhà Đẹp Chỉ Cách Bạn<br><span>Một Cuộc Gọi</span></h2>
+        <div class="divider"></div>
+        <p>
+          Để lại thông tin hoặc liên hệ trực tiếp với <strong>Thiết Kế Nội Thất 2KIM</strong>. Chuyên gia sẽ tư vấn miễn phí và khảo sát tận nơi.
+        </p>
+        <div class="contact-items">
+          <div class="citem">
+            <div class="citem-icon">📞</div>
+            <div class="citem-text">
+              <strong><a href="tel:0974236798" style="color:var(--navy);">0974 236 798</a></strong>
+              <span>Hotline tư vấn </span>
+            </div>
+          </div>
+          <div class="citem">
+            <div class="citem-icon">💬</div>
+            <div class="citem-text">
+              <strong><a href="https://zalo.me/0974236798" target="_blank" style="color:var(--navy);">Zalo: 0974 236 798</a></strong>
+              <span>Nhắn tin qua Zalo — phản hồi nhanh trong 5 phút</span>
+            </div>
+          </div>
+          <div class="citem">
+            <div class="citem-icon">📘</div>
+            <div class="citem-text">
+              <strong><a href="https://www.facebook.com/thietkenoithat2kim" target="_blank" style="color:var(--navy);">Facebook: Thiết Kế Nội Thất 2KIM</a></strong>
+              <span>Xem portfolio & đặt lịch qua fanpage</span>
+            </div>
+          </div>
+          <div class="citem">
+            <div class="citem-icon">📍</div>
+            <div class="citem-text">
+              <strong>Khảo sát tận nơi</strong>
+              <span>Liên hệ để được sắp xếp lịch khảo sát phù hợp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-box">
+        <h4>Đặt Lịch Tư Vấn Thiết Kế</h4>
+        <p class="form-sub">Điền thông tin để chuyên viên 2KIM liên hệ sớm nhất</p>
+        <div class="lform-row">
+          <label>Họ và tên *</label>
+          <input type="text" placeholder="Nguyễn Văn A">
+        </div>
+        <div class="lform-row">
+          <label>Số điện thoại *</label>
+          <input type="tel" placeholder="0999 999 999">
+        </div>
+        <div class="lform-row">
+          <label>Tỉnh / Thành phố</label>
+          <select>
+            <option value="">-- Chọn khu vực --</option>
+            <option>Hà Nội</option>
+            <option>Thanh Hóa</option>
+            <option>Nghệ An</option>
+            <option>Hải Phòng</option>
+            <option>Hải Dương</option>
+            <option>Bắc Ninh</option>
+            <option>Bắc Giang</option>
+            <option>Hưng Yên</option>
+            <option>Nam Định</option>
+            <option>Thái Bình</option>
+            <option>Ninh Bình</option>
+            <option>Hà Nam</option>
+            <option>Quảng Ninh</option>
+            <option>Phú Thọ</option>
+            <option>Vĩnh Phúc</option>
+            <option>Thái Nguyên</option>
+            <option>Lạng Sơn</option>
+            <option>Tuyên Quang</option>
+            <option>Yên Bái</option>
+            <option>Hòa Bình</option>
+            <option>Sơn La</option>
+            <option>Điện Biên</option>
+            <option>Lai Châu</option>
+            <option>Lào Cai</option>
+            <option>Hà Giang</option>
+            <option>Cao Bằng</option>
+            <option>Bắc Kạn</option>
+          </select>
+        </div>
+        <div class="lform-row">
+          <label>Loại công trình</label>
+          <select>
+            <option>-- Chọn loại công trình --</option>
+            <option>Căn hộ chung cư</option>
+            <option>Nhà phố / liền kề</option>
+            <option>Biệt thự</option>
+            <option>Văn phòng / showroom</option>
+            <option>Nhà hàng / café</option>
+          </select>
+        </div>
+        <div class="lform-row">
+          <label>Diện tích dự kiến</label>
+          <select>
+            <option>-- Chọn diện tích --</option>
+            <option>Dưới 50m²</option>
+            <option>50 – 100m²</option>
+            <option>100 – 200m²</option>
+            <option>Trên 200m²</option>
+          </select>
+        </div>
+        <div class="lform-row">
+          <label>Nhu cầu cụ thể</label>
+          <textarea placeholder="Mô tả phong cách yêu thích, ngân sách dự kiến, thời gian triển khai..."></textarea>
+        </div>
+        <button class="lform-submit" onclick="alert('Cảm ơn bạn đã liên hệ Thiết Kế Nội Thất 2KIM! Chuyên gia sẽ gọi lại trong vòng 15 phút.')">
+          GỬI YÊU CẦU TƯ VẤN
+        </button>
+        <p class="lform-note">🔒 Hoàn toàn miễn phí · Không ràng buộc · Bảo mật thông tin</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">THIẾT KẾ NỘI THẤT <span>2KIM</span></div>
+      <div class="footer-slogan">TIN CẬY – TẬN TÂM – NÂNG TẦM</div>
+      <p class="footer-desc">Đơn vị thiết kế nội thất uy tín với hơn 5 năm kinh nghiệm, 100+ công trình hoàn thiện. Khảo sát tận nơi.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Dịch Vụ</h5>
+      <ul>
+        <li><a href="#dich-vu">Thiết kế chung cư</a></li>
+        <li><a href="#dich-vu">Thiết kế nhà phố</a></li>
+        <li><a href="#dich-vu">Thiết kế biệt thự</a></li>
+        <li><a href="#dich-vu">Thiết kế văn phòng</a></li>
+        <li><a href="#dich-vu">Thi công trọn gói</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Liên Kết</h5>
+      <ul>
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#du-an">Dự án tiêu biểu</a></li>
+        <li><a href="#tai-sao">Tại sao chọn 2KIM</a></li>
+        <li><a href="https://www.facebook.com/thietkenoithat2kim" target="_blank">Fanpage Facebook</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Liên Hệ</h5>
+      <ul>
+        <li><a href="tel:0974236798">📞 Hotline: 0974 236 798</a></li>
+        <li><a href="https://zalo.me/0974236798" target="_blank">💬 Zalo: 0974 236 798</a></li>
+        <li><a href="https://www.facebook.com/thietkenoithat2kim" target="_blank">📘 Facebook: Thiết Kế Nội Thất 2KIM</a></li>
+        <li><a href="#lien-he">📍 CT5B KĐT Văn Khê, Hà Đông, Hà Nội</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 <span class="footer-brand-accent">THIẾT KẾ NỘI THẤT 2KIM</span> — Mỗi Không Gian Là Một Tác Phẩm Nghệ Thuật</p>
+    <p>TIN CẬY – TẬN TÂM – NÂNG TẦM</p>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-group">
+  <a href="https://zalo.me/0974236798" target="_blank" class="fbtn fbtn-zalo pulse">
+    💬 Chat Zalo 2KIM
+  </a>
+  <a href="tel:0974236798" class="fbtn fbtn-call">
+    📞 0974 236 798
+  </a>
+</div>
+
+<script>
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Scroll fade-in
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Tab switching (services)
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.services-tabs').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Port tabs
+document.querySelectorAll('.port-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.port-tabs').querySelectorAll('.port-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Sticky header shadow on scroll
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header');
+  if (window.scrollY > 10) {
+    header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)';
+  } else {
+    header.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
+  }
+});
+</script>
+</body>
+</html>
